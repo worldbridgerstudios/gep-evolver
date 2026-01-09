@@ -5,7 +5,7 @@ A GEP engine based on Cândida Ferreira's 2001 architecture, enhanced with
 Frozen Glyphs — a system that constrains the search space to elegant primitives.
 
 Usage:
-    from gepevolver import GlyphSet, evolve_with_glyphs
+    from gepevolver import GlyphSet, evolve_with_glyphs, GlyphGEP, Operator
     
     # Create a glyph set (constrained terminals)
     glyphs = GlyphSet.cubes_and_triangulars()
@@ -18,22 +18,35 @@ Usage:
         generations=2000
     )
     
-    print(f"Expression: {result[3]}")
-    print(f"Value: {result[2]}")
+    print(f"Expression: {result.expression}")
+    print(f"Value: {result.value}")
+    
+    # Custom operators
+    engine = GlyphGEP(glyphs)
+    engine.register_operator('T', 1, lambda n: n*(n+1)//2, 'T')  # Triangular
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 from .glyphs import GlyphSet, Glyph
-from .engine import GlyphGEP, evolve_with_glyphs
-from .karva import (
+from .engine import (
+    GlyphGEP,
+    evolve_with_glyphs,
+    EvolutionResult,
+    Operator,
     Gene,
     TreeNode,
+    DEFAULT_OPERATORS,
+    protected_div,
+    protected_pow,
+    protected_sqrt,
+)
+from .karva import (
     random_gene,
     karva_to_tree,
     evaluate_gene,
     gene_to_expression,
-    OPERATORS,
+    OPERATORS as KARVA_OPERATORS,
     TERMINAL_SYMBOLS,
 )
 
@@ -46,13 +59,19 @@ __all__ = [
     # Engine
     "GlyphGEP",
     "evolve_with_glyphs",
-    # Core Karva
+    "EvolutionResult",
+    "Operator",
     "Gene",
     "TreeNode",
+    "DEFAULT_OPERATORS",
+    "protected_div",
+    "protected_pow",
+    "protected_sqrt",
+    # Core Karva (legacy)
     "random_gene",
     "karva_to_tree",
     "evaluate_gene",
     "gene_to_expression",
-    "OPERATORS",
+    "KARVA_OPERATORS",
     "TERMINAL_SYMBOLS",
 ]
