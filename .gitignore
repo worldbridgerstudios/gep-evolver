@@ -1,9 +1,64 @@
-# Byte-compiled / optimized / DLL files
+# ══════════════════════════════════════════════════════════════════════════════
+# Global .gitignore — managed by ~/Projects/meta/sync
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ─────────────────────────────────────────────────────────────────────────────
+# macOS
+# ─────────────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# ─────────────────────────────────────────────────────────────────────────────
+# VSCode
+# ─────────────────────────────────────────────────────────────────────────────
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Xcode / Swift
+# ─────────────────────────────────────────────────────────────────────────────
+.build/
+DerivedData/
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+Packages/
+.swiftpm/
+Package.resolved
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Python
+# ─────────────────────────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Distribution / packaging
+*.so
 .Python
 build/
 develop-eggs/
@@ -18,23 +73,143 @@ sdist/
 var/
 wheels/
 *.egg-info/
+.installed.cfg
 *.egg
+MANIFEST
+.python-version
 
-# Environments
-.env
-.venv
-env/
+# Virtual environments
 venv/
+.venv/
+ENV/
+env/
+.env.local
 
-# IDE
-.idea/
-.vscode/
+# Poetry / Poe
+poetry.lock
+.poe_tasks/
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+# mypy / pyright
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyright/
+pyrightconfig.json
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_metadata
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Node.js / JavaScript / TypeScript
+# ─────────────────────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm/
+.yarn/
+.pnp.*
+
+# Build outputs
+dist/
+.output/
+.nuxt/
+.cache/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# React Native / Expo
+# ─────────────────────────────────────────────────────────────────────────────
+.expo/
+.expo-shared/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# Metro
+.metro-health-check*
+
+# iOS (additional)
+ios/Pods/
+ios/.xcode.env.local
+ios/build/
+
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+*.apk
+*.aab
+*.keystore
+!debug.keystore
+local.properties
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Vite
+# ─────────────────────────────────────────────────────────────────────────────
+*.local
+.vite/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Next.js
+# ─────────────────────────────────────────────────────────────────────────────
+.next/
+out/
+.vercel/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Django
+# ─────────────────────────────────────────────────────────────────────────────
+*.log
+db.sqlite3
+db.sqlite3-journal
+staticfiles/
+mediafiles/
+*.pot
+*.mo
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Environment & Secrets
+# ─────────────────────────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+secrets/
+.secrets/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# IDE / Editor
+# ─────────────────────────────────────────────────────────────────────────────
 *.swp
 *.swo
+*~
+.idea/
+*.iml
 
-# OS
-.DS_Store
+# ─────────────────────────────────────────────────────────────────────────────
+# Misc
+# ─────────────────────────────────────────────────────────────────────────────
+*.log
+logs/
+tmp/
+temp/
+.cache/
+*.bak
+*.backup
 Thumbs.db
-
-# Development notes (not for distribution)
-github/
