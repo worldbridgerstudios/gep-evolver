@@ -49,6 +49,12 @@ from .karva import (
     OPERATORS as KARVA_OPERATORS,
     TERMINAL_SYMBOLS,
 )
+from .multigene import (
+    Chromosome,
+    MultiGeneResult,
+    MultiGeneGEP,
+    evolve_multigene,
+)
 
 __all__ = [
     # Version
@@ -67,6 +73,11 @@ __all__ = [
     "protected_div",
     "protected_pow",
     "protected_sqrt",
+    # Multi-gene
+    "Chromosome",
+    "MultiGeneResult",
+    "MultiGeneGEP",
+    "evolve_multigene",
     # Core Karva (legacy)
     "random_gene",
     "karva_to_tree",

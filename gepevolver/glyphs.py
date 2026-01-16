@@ -76,6 +76,11 @@ class GlyphSet:
             return self.glyphs[symbol].value
         return float('nan')
     
+    def set_value(self, symbol: str, value: float) -> None:
+        """Update the value of an existing symbol."""
+        if symbol in self.glyphs:
+            self.glyphs[symbol].value = value
+    
     def display(self, symbol: str) -> str:
         """Get human-readable name of a symbol."""
         if symbol in self.glyphs:
