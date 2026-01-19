@@ -222,6 +222,3 @@ target/
 api-keys.yml
 api-keys.yml.*
 api-keys.yml.template
-
-data/
-ai/skills/*.zip
